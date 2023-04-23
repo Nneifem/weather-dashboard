@@ -1,0 +1,75 @@
+.dashboard{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: lightblue;
+}
+
+.search-menu{
+    padding-left: 30px;
+}
+
+.search-menu [type=text]{
+    width: 192px;
+}
+
+.search-menu button{
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    width: 196px;
+}
+
+.location{
+    display: flex;
+    border: solid black 2px;
+    padding: 70px;
+    margin-left: 280px;
+    margin-right: 210px;
+}
+
+main h2{
+    padding-left: 275px;
+    padding-top: 40px;
+}
+.five-day{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 270px;
+    padding-right: 200px;
+}
+
+.day-1{
+    border: solid black 2px;
+    padding: 70px;
+    padding-bottom: 200px;
+}
+
+.day-2{
+    border: solid black 2px;
+    padding: 70px;
+    padding-bottom: 200px;
+}
+
+.day-3{
+    border: solid black 2px;
+    padding: 70px;
+    padding-bottom: 200px;
+}
+
+.day-4{
+    border: solid black 2px;
+    padding: 70px;
+    padding-bottom: 200px;
+}
+
+.day-5{
+    border: solid black 2px;
+    padding: 70px;
+    padding-bottom: 200px;
+}
+
+@media screen and (max-width 768px){
+    .location
+}
