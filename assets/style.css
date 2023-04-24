@@ -70,6 +70,33 @@ main h2{
     padding-bottom: 200px;
 }
 
-@media screen and (max-width 768px){
-    .location
+@media screen and (max-width: 768px){
+    .location {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .five-day {
+        flex-direction: column;
+    }
+
+    .day-1{
+        margin: 10px;
+    }
+
+    .day-2{
+        margin: 10px;
+    }
+
+    .day-3{
+        margin: 10px;
+    }
+
+    .day-4{
+        margin: 10px;
+    }
+
+    .day-5{
+        margin: 10px;
+    }
 }
