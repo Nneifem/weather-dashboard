@@ -26,11 +26,11 @@
     border: solid black 2px;
     padding: 70px;
     margin-left: 280px;
-    margin-right: 210px;
+    margin-right: 225px;
 }
 
 main h2{
-    padding-left: 275px;
+    padding-left: 295px;
     padding-top: 40px;
 }
 .five-day{
@@ -74,29 +74,45 @@ main h2{
     .location {
         display: flex;
         justify-content: flex-start;
+        padding: 100px;
+        padding-top: 170px;
     }
 
     .five-day {
         flex-direction: column;
     }
 
-    .day-1{
+    .day-1 {
         margin: 10px;
+        padding: 100px;
+        padding-top: 210px;
     }
 
-    .day-2{
+    .day-2 {
         margin: 10px;
+        padding: 100px;
+        padding-top: 210px;
     }
 
-    .day-3{
+    .day-3 {
         margin: 10px;
+        padding: 100px;
+        padding-top: 210px;
     }
 
-    .day-4{
+    .day-4 {
         margin: 10px;
+        padding: 100px;
+        padding-top: 210px;
     }
 
-    .day-5{
+    .day-5 {
         margin: 10px;
+        padding: 100px;
+        padding-top: 210px;
+    }
+
+    main h2 {
+        padding-left: 279px;
     }
 }
