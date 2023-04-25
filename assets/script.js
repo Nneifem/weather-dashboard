@@ -1,6 +1,8 @@
 var APIKey = "15bcd327b28cdd949d38c1ea8033b975";
 var searchBtn = document.querySelector(".search-menu button");
-var fiveDaysContainer = document.querySelector("five-day");
+var fiveDaysContainer = document.querySelector(".five-day");
+var locationCotaniner = document.querySelector(".location");
+var cityDateEl = document.querySelector(".city-date");
 
 /* code to make the button work */
 searchBtn.addEventListener("click", function(){
@@ -23,10 +25,14 @@ function getCity(userInput){
         getWeather(lat, lon);
 
         // create elements in here
+        var cityName = document.createElement("h1")
+        cityName.textContent = data[0].name;
+        cityDateEl.setAttribute("style", "font-size: 24px; padding-left: 10px; padding-top: 10px;")
+        cityDateEl.append(cityName);
     })
 }
 
 function getWeather(lat, lon){
-    console.log("https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=15bcd327b28cdd949d38c1ea8033b975");
+    console.log("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey);
 }
 getCity("chicago");

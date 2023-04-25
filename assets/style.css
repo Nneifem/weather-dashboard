@@ -22,55 +22,67 @@
 }
 
 .location{
-    display: flex;
     border: solid black 2px;
-    padding: 150px;
     margin-left: 280px;
-    margin-right: 225px;
+    margin-right: 50px;
+}
+
+.city-date {
+    padding: 10px;
+}
+
+.location ul {
+    padding: 5px;
+    list-style-type: none;
 }
 
 main h2{
-    padding-left: 295px;
-    padding-top: 40px;
-}
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+} 
+
 .five-day{
     display: flex;
     justify-content: space-around;
     padding-left: 270px;
-    padding-right: 200px;
-}
+    padding-right: 40px;
+} 
 
-.day-1{
+.container-1{
     border: solid black 2px;
     padding: 70px;
     padding-bottom: 200px;
 }
 
-.day-2{
+.container-2{
     border: solid black 2px;
     padding: 70px;
     padding-bottom: 200px;
 }
 
-.day-3{
+.container-3{
     border: solid black 2px;
     padding: 70px;
     padding-bottom: 200px;
 }
 
-.day-4{
+.container-4{
     border: solid black 2px;
     padding: 70px;
     padding-bottom: 200px;
 }
 
-.day-5{
+.container-5{
     border: solid black 2px;
     padding: 70px;
     padding-bottom: 200px;
-}
+} 
 
-@media screen and (max-width: 768px){
+
+
+
+/* @media screen and (max-width: 768px){
     .location {
         display: flex;
         justify-content: flex-start;
@@ -82,31 +94,31 @@ main h2{
         flex-direction: column;
     }
 
-    .day-1 {
+    .container-1 {
         margin: 10px;
         padding: 100px;
         padding-top: 210px;
     }
 
-    .day-2 {
+    .container-2 {
         margin: 10px;
         padding: 100px;
         padding-top: 210px;
     }
 
-    .day-3 {
+    .container-3 {
         margin: 10px;
         padding: 100px;
         padding-top: 210px;
     }
 
-    .day-4 {
+    .container-4 {
         margin: 10px;
         padding: 100px;
         padding-top: 210px;
     }
 
-    .day-5 {
+    .container-5 {
         margin: 10px;
         padding: 100px;
         padding-top: 210px;
@@ -115,4 +127,4 @@ main h2{
     main h2 {
         padding-left: 279px;
     }
-}
+} */
