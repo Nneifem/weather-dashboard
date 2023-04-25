@@ -24,7 +24,7 @@
 .location{
     display: flex;
     border: solid black 2px;
-    padding: 70px;
+    padding: 150px;
     margin-left: 280px;
     margin-right: 225px;
 }
@@ -75,7 +75,7 @@ main h2{
         display: flex;
         justify-content: flex-start;
         padding: 100px;
-        padding-top: 170px;
+        padding-top: 200px;
     }
 
     .five-day {
