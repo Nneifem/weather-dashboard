@@ -1,13 +1,13 @@
+var userInput;
 var APIKey = "15bcd327b28cdd949d38c1ea8033b975";
 var searchBtn = document.querySelector(".search-menu button");
 var fiveDaysContainer = document.querySelector(".five-day");
 var locationCotaniner = document.querySelector(".location");
 var cityDateEl = document.querySelector(".city-date");
+var inputEl = document.querySelector(".text");
 
 /* code to make the button work */
 searchBtn.addEventListener("click", function(){
-    console.log("click me");
-})
 
 /* getting the city, lat, and lon from api*/
 function getCity(userInput){
@@ -18,7 +18,7 @@ function getCity(userInput){
     })
 
     .then(function(data){
-        data = [{"name":"Chicago","local_names":{"mk":"Чикаго","el":"Σικάγο","mn":"Чикаго","br":"Chicago","uk":"Чикаго","bi":"Chicago","iu":"ᓰᖄᑯ","th":"ชิคาโก","jv":"Chicago","az":"Çikaqo","kw":"Chicago","so":"Chicago","nl":"Chicago","af":"Chicago","hi":"शिकागो","sc":"Chicago","sl":"Chicago","yo":"Ṣìkágò","ms":"Chicago","bn":"শিকাগো","cs":"Chicago","eu":"Chicago","ml":"ഷിക്കാഗോ","ar":"شيكاغو","eo":"Ĉikago","rm":"Chicago","da":"Chicago","sk":"Chicago","te":"చికాగో","ur":"شکاگو، الینوائے","sq":"Çikago","xh":"E-Chicago","no":"Chicago","ce":"Чикаго","hu":"Chicago","zh":"芝加哥","se":"Chicago","sg":"Chicago","ca":"Chicago","yi":"שיקאגא","id":"Chicago","it":"Chicago","sh":"Chicago","ta":"சிகாகோ","ki":"Chicago","sn":"Chicago","an":"Chicago","kn":"ಶಿಕಾಗೊ","pa":"ਸ਼ਿਕਾਗੋ","fo":"Chicago","tt":"Çikago","be":"Чыкага","fj":"Chicago","cy":"Chicago","vo":"Chicago","ha":"Chicago","mi":"Chicago","ka":"ჩიკაგო","de":"Chicago","nn":"Chicago","is":"Chicago","li":"Chicago","qu":"Chicago","en":"Chicago","gl":"Chicago","rn":"Chicago","sw":"Chicago","fi":"Chicago","gn":"Chikago","lb":"Chicago","nv":"Shikááʼgóó","bs":"Chicago","bm":"Chicago","mg":"Chicago","tr":"Şikago","co":"Chicago","kk":"Чикаго","mr":"शिकागो","fr":"Chicago","uz":"Chicago","ak":"Chicago","pt":"Chicago","ne":"शिकागो","vi":"Chicago","hr":"Chicago","ro":"Chicago","tl":"Chicago","st":"Chicago","es":"Chicago","io":"Chicago","ig":"Chicago","ru":"Чикаго","ie":"Chicago","gd":"Chicago","na":"Chicago","bh":"शिकागो","wa":"Tchicago","ps":"شیکاګو","ia":"Chicago","he":"שיקגו","am":"ሺካጎ","ug":"Chikago","hy":"Չիկագո","oc":"Chicago","ga":"Chicago","ku":"Chicago","lv":"Čikāga","ht":"Chikago","fa":"شیکاگو","zu":"Chicago","fy":"Chicago","ko":"시카고","sr":"Чикаго","kl":"Chicago","my":"ရှီကာဂိုမြို့","gv":"Chicago","la":"Sicagum","bg":"Чикаго","os":"Чикаго","lt":"Čikaga","pl":"Chicago","et":"Chicago","tw":"Kyekago","tg":"Чикаго","ky":"Чикаго","tk":"Chicago","sv":"Chicago","ja":"シカゴ"},"lat":41.8755616,"lon":-87.6244212,"country":"US","state":"Illinois"}]
+        data = [{"name":"Chicago","local_names":{"zu":"Chicago","fa":"شیکاگو","eu":"Chicago","vi":"Chicago","fj":"Chicago","ms":"Chicago","jv":"Chicago","ht":"Chikago","it":"Chicago","sw":"Chicago","zh":"芝加哥","az":"Çikaqo","sc":"Chicago","so":"Chicago","gl":"Chicago","cy":"Chicago","ta":"சிகாகோ","mn":"Чикаго","tl":"Chicago","hu":"Chicago","uk":"Чикаго","bn":"শিকাগো","kn":"ಶಿಕಾಗೊ","bm":"Chicago","sg":"Chicago","ug":"Chikago","la":"Sicagum","sl":"Chicago","tk":"Chicago","fy":"Chicago","ne":"शिकागो","ie":"Chicago","ca":"Chicago","hi":"शिकागो","am":"ሺካጎ","pa":"ਸ਼ਿਕਾਗੋ","ar":"شيكاغو","ig":"Chicago","lb":"Chicago","nn":"Chicago","ce":"Чикаго","ha":"Chicago","sr":"Чикаго","ak":"Chicago","pl":"Chicago","io":"Chicago","ps":"شیکاګو","lt":"Čikaga","yi":"שיקאגא","eo":"Ĉikago","kl":"Chicago","ko":"시카고","wa":"Tchicago","fr":"Chicago","vo":"Chicago","tr":"Şikago","af":"Chicago","ga":"Chicago","ka":"ჩიკაგო","tt":"Çikago","ja":"シカゴ","oc":"Chicago","bs":"Chicago","os":"Чикаго","ro":"Chicago","be":"Чыкага","sq":"Çikago","sn":"Chicago","pt":"Chicago","co":"Chicago","br":"Chicago","kw":"Chicago","ki":"Chicago","rn":"Chicago","is":"Chicago","he":"שיקגו","et":"Chicago","se":"Chicago","fo":"Chicago","nl":"Chicago","mi":"Chicago","yo":"Ṣìkágò","ml":"ഷിക്കാഗോ","ky":"Чикаго","hr":"Chicago","mg":"Chicago","no":"Chicago","gd":"Chicago","sv":"Chicago","an":"Chicago","xh":"E-Chicago","bg":"Чикаго","bh":"शिकागो","da":"Chicago","te":"చికాగో","iu":"ᓰᖄᑯ","mk":"Чикаго","el":"Σικάγο","li":"Chicago","gv":"Chicago","rm":"Chicago","mr":"शिकागो","my":"ရှီကာဂိုမြို့","nv":"Shikááʼgóó","gn":"Chikago","lv":"Čikāga","cs":"Chicago","es":"Chicago","sk":"Chicago","uz":"Chicago","qu":"Chicago","tw":"Kyekago","hy":"Չիկագո","ia":"Chicago","tg":"Чикаго","na":"Chicago","kk":"Чикаго","ku":"Chicago","sh":"Chicago","fi":"Chicago","ru":"Чикаго","id":"Chicago","en":"Chicago","bi":"Chicago","th":"ชิคาโก","de":"Chicago","ur":"شکاگو، الینوائے","st":"Chicago"},"lat":41.8755616,"lon":-87.6244212,"country":"US","state":"Illinois"}];
             var lat = data[0].lat;
             var lon = data[0].lon;
         console.log(lat + ", " + lon);
@@ -33,6 +33,7 @@ function getCity(userInput){
 }
 
 function getWeather(lat, lon){
-    console.log("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey);
+   console.log("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey);
 }
 getCity("chicago");
+})

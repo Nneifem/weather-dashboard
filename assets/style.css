@@ -10,7 +10,7 @@
     padding-left: 30px;
 }
 
-.search-menu [type=text]{
+.text {
     width: 192px;
 }
 
@@ -51,31 +51,31 @@ main h2{
 
 .container-1{
     border: solid black 2px;
-    padding: 70px;
+    padding: 50px;
     padding-bottom: 200px;
 }
 
 .container-2{
     border: solid black 2px;
-    padding: 70px;
+    padding: 50px;
     padding-bottom: 200px;
 }
 
 .container-3{
     border: solid black 2px;
-    padding: 70px;
+    padding: 50px;
     padding-bottom: 200px;
 }
 
 .container-4{
     border: solid black 2px;
-    padding: 70px;
+    padding: 50px;
     padding-bottom: 200px;
 }
 
 .container-5{
     border: solid black 2px;
-    padding: 70px;
+    padding: 50px;
     padding-bottom: 200px;
 } 
 
