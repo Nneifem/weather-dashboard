@@ -3,28 +3,35 @@ var APIKey = "15bcd327b28cdd949d38c1ea8033b975";
 var searchBtn = document.querySelector(".search-menu button");
 var fiveDaysContainer = document.querySelector(".five-day");
 var locationCotaniner = document.querySelector(".location");
-var cityDateEl = document.querySelector(".city-date");
+var cityNameEl = document.querySelector(".city");
 var inputEl = document.querySelector(".text");
 var currentTemp = document.querySelector(".today-temp");
 var currentWind = document.querySelector(".today-wind");
 var currentHumidity = document.querySelector(".today-humidity");
+var currentDateEl = document.querySelector(".currentd-date");
+var date = dayjs();
 
+var dateOne = document.querySelector(".date-1");
 var dayOneTemp = document.querySelector(".temp-1");
 var dayOneWind = document.querySelector(".wind-1");
 var dayOneHumidity = document.querySelector(".humidity-1");
 
+var dateTwo = document.querySelector(".date-2");
 var dayTwoTemp = document.querySelector(".temp-2");
 var dayTwoWind = document.querySelector(".wind-2");
 var dayTwoHumidity = document.querySelector(".humidity-2");
 
+var dateThree = document.querySelector(".date-3");
 var dayThreeTemp = document.querySelector(".temp-3");
 var dayThreeWind = document.querySelector(".wind-3");
 var dayThreeHumidity = document.querySelector(".humidity-3");
 
+var dateFour = document.querySelector(".date-4")
 var dayFourTemp = document.querySelector(".temp-4");
 var dayFourWind = document.querySelector(".wind-4");
 var dayFourHumidity = document.querySelector(".humidity-4");
 
+var dateFive = document.querySelector(".date-5");
 var dayFiveTemp = document.querySelector(".temp-5");
 var dayFiveWind = document.querySelector(".wind-5");
 var dayFiveHumidity = document.querySelector(".humidity-5");
@@ -48,10 +55,10 @@ function getCity(userInput){
 
         // create elements in here
         var cityName = document.createElement("h1")
-        cityName.textContent = data[0].name;
-        cityDateEl.innerHTML = "";
-        cityDateEl.setAttribute("style", "font-size: 24px; padding-left: 10px; padding-top: 10px;")
-        cityDateEl.append(cityName);
+        cityName.textContent = data[0].name + date.format(" (M-DD-YYYY)");
+        cityNameEl.innerHTML = "";
+        cityNameEl.setAttribute("style", "font-size: 24px; padding-left: 10px; padding-top: 10px;")
+        cityNameEl.append(cityName);
     })
 }
 
@@ -78,9 +85,14 @@ function getWeather(lat, lon){
         currentHumidity.innerHTML = "";
         currentHumidity.append(humidity);
 
-        // making an loop for the 5 day forecast
+
 
         /* ------------------------- day 1 ----------------------------- */
+        var theDateOne = document.createElement("h2");
+        theDateOne.textContent = date.add(1, "day").format("M-DD-YYYY");
+        dateOne.innerHTML = "";
+        dateOne.append(theDateOne);
+
         var tempOne = document.createElement("li");
         tempOne.textContent = "Temperature: " + dataTwo.list[1].main.temp;
         dayOneTemp.innerHTML = "";
@@ -99,6 +111,11 @@ function getWeather(lat, lon){
 
 
         /* ------------------------- day 2 ----------------------------- */
+        var theDateTwo = document.createElement("h2");
+        theDateTwo.textContent = date.add(2, "day").format("M-DD-YYYY");
+        dateTwo.innerHTML = "";
+        dateTwo.append(theDateTwo);
+
         var tempTwo = document.createElement("li");
         tempTwo.textContent = "Temperature: " + dataTwo.list[2].main.temp;
         dayTwoTemp.innerHTML = "";
@@ -117,6 +134,11 @@ function getWeather(lat, lon){
 
 
         /* ------------------------- day 3 ----------------------------- */
+        var theDateThree = document.createElement("h2");
+        theDateThree.textContent = date.add(3, "day").format("M-DD-YYYY");
+        dateThree.innerHTML = "";
+        dateThree.append(theDateThree);
+        
         var tempThree = document.createElement("li");
         tempThree.textContent = "Temperature: " + dataTwo.list[3].main.temp;
         dayThreeTemp.innerHTML = "";
@@ -135,6 +157,11 @@ function getWeather(lat, lon){
 
 
         /* ------------------------- day 4 ----------------------------- */
+        var theDateFour = document.createElement("h2");
+        theDateFour.textContent = date.add(4, "day").format("M-DD-YYYY");
+        dateFour.innerHTML = "";
+        dateFour.append(theDateFour);
+        
         var tempFour = document.createElement("li");
         tempFour.textContent = "Temperature: " + dataTwo.list[4].main.temp;
         dayFourTemp.innerHTML = "";
@@ -152,6 +179,11 @@ function getWeather(lat, lon){
         /* ------------------------- day 4 ----------------------------- */
 
         /* ------------------------- day 5 ----------------------------- */
+        var theDateFive = document.createElement("h2");
+        theDateFive.textContent = date.add(5, "day").format("M-DD-YYYY");
+        dateFive.innerHTML = "";
+        dateFive.append(theDateFive);
+        
         var tempFive = document.createElement("li");
         tempFive.textContent = "Temperature: " + dataTwo.list[5].main.temp;
         dayFiveTemp.innerHTML = "";

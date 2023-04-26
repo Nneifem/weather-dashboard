@@ -55,10 +55,18 @@ main h2{
     padding-bottom: 200px;
 }
 
+.container-1 ul {
+    list-style-type: none;
+}
+
 .container-2{
     border: solid black 2px;
     padding: 50px;
     padding-bottom: 200px;
+}
+
+.container-2 ul{
+    list-style-type: none;
 }
 
 .container-3{
@@ -67,10 +75,18 @@ main h2{
     padding-bottom: 200px;
 }
 
+.container-3 ul {
+    list-style-type: none;
+}
+
 .container-4{
     border: solid black 2px;
     padding: 50px;
     padding-bottom: 200px;
+}
+
+.container-4 ul {
+    list-style-type: none;
 }
 
 .container-5{
@@ -79,7 +95,9 @@ main h2{
     padding-bottom: 200px;
 } 
 
-
+.container-5 ul {
+    list-style-type: none;
+}
 
 
 /* @media screen and (max-width: 768px){
