@@ -89,12 +89,10 @@ function renderForecastCard(forecastData){
     /* the temp, wind speed, and humidity for each day */
     var forecastInfo = document.createElement("section");
     var section = document.createElement("p");
-    section.textContent = "Temperature: " + forecastData.main.temp + "Wind Speed: " + forecastData.wind.speed + " MPH" + "Humidity: " + forecastData.main.humidity + " %";
+    section.textContent = "Temperature: " + forecastData.main.temp + "\nWind Speed: " + forecastData.wind.speed + " MPH" + "\nHumidity: " + forecastData.main.humidity + " %";
     section.setAttribute("class", "five-day");
     forecastCard.append(section);
     fiveDaysContainer.append(forecastInfo); 
-
-    
 }
 
 
