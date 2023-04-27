@@ -41,10 +41,13 @@ var dayFiveHumidity = document.querySelector(".humidity-5");
 function searchHistory() {
     var history = JSON.parse(localStorage.getItem("city"));
     cityList.innerHTML = "";
+    
+    if(history !== null){
     for(var i = 0; i < history.length; i++){
         var button = document.createElement("button");
         button.textContent = history[i];
         cityList.append(button);
+        }
     }
 }
 
@@ -89,9 +92,28 @@ function getCity(userInput) {
 function renderForecastCard(forecastData){
     var forecastCard = document.createElement("div");
     var heading = document.createElement("h2");
-    heading.textContent = forecastData;
+    heading.textContent = forecastData.dt_txt;
     forecastCard.append(heading);
     fiveDaysContainer.append(forecastCard);
+
+    var forecastInfo = document.createElement("section");
+    var section = document.createElement("p");
+    section.textContent = "Temperature: " + forecastData.main.temp + "Wind Speed: " + forecastData.wind.speed + " Humidity: " + forecastData.main.humidity;;
+    forecastCard.append(section);
+    fiveDaysContainer.append(forecastInfo); 
+
+    // var forecastWind = document.createElement("section");
+    // var section2 = document.createElement("p");
+    // section2.textContent = "Wind Speed: " + forecastData.wind.speed;
+    // forecastWind.append(section2);
+    // fiveDaysContainer.append(forecastWind);
+
+    // var forecastHumidity = document.createElement("section");
+    // var section3 = document.createElement("p");
+    // section3.textContent = "Humidity: " + forecastData.main.humidity;
+    // section3.setAttribute("style", )
+    // forecastHumidity.append(section3);
+    // fiveDaysContainer.append(forecastHumidity);
 }
 
 
@@ -120,126 +142,8 @@ function getWeather(lat, lon) {
             currentHumidity.innerHTML = "";
             currentHumidity.append(humidity);
 
-            for(var i = 0; i < dataTwo.list.length; i++){
+            for(var i = 6; i < dataTwo.list.length; i+= 6){
                 renderForecastCard(dataTwo.list[i]);
             }
-
-            // /* ------------------------- day 1 ----------------------------- */
-            // var theDateOne = document.createElement("h2");
-            // theDateOne.textContent = date.add(1, "day").format("M/DD/YYYY");
-            // dateOne.setAttribute("style", "font-size: 15px; padding-bottom: 20px")
-            // dateOne.innerHTML = "";
-            // dateOne.append(theDateOne);
-
-            // var tempOne = document.createElement("li");
-            // tempOne.textContent = "Temperature: " + dataTwo.list[1].main.temp;
-            // dayOneTemp.innerHTML = "";
-            // dayOneTemp.append(tempOne);
-
-            // var windOne = document.createElement("li");
-            // windOne.textContent = "Wind Speed: " + dataTwo.list[1].wind.speed;
-            // dayOneWind.innerHTML = "";
-            // dayOneWind.append(windOne);
-
-            // var humidityOne = document.createElement("li");
-            // humidityOne.textContent = "Humidity: " + dataTwo.list[1].main.humidity;
-            // dayOneHumidity.innerHTML = "";
-            // dayOneHumidity.append(humidityOne);
-            // /* ------------------------- day 1 ----------------------------- */
-
-
-            // /* ------------------------- day 2 ----------------------------- */
-            // var theDateTwo = document.createElement("h2");
-            // theDateTwo.textContent = date.add(2, "day").format("M/DD/YYYY");
-            // dateTwo.setAttribute("style", "font-size: 15px; padding-bottom: 20px")
-            // dateTwo.innerHTML = "";
-            // dateTwo.append(theDateTwo);
-
-            // var tempTwo = document.createElement("li");
-            // tempTwo.textContent = "Temperature: " + dataTwo.list[2].main.temp;
-            // dayTwoTemp.innerHTML = "";
-            // dayTwoTemp.append(tempTwo);
-
-            // var windTwo = document.createElement("li");
-            // windTwo.textContent = "Wind Speed: " + dataTwo.list[2].wind.speed;
-            // dayTwoWind.innerHTML = "";
-            // dayTwoWind.append(windTwo);
-
-            // var humidityTwo = document.createElement("li");
-            // humidityTwo.textContent = "Humidity: " + dataTwo.list[2].main.humidity;
-            // dayTwoHumidity.innerHTML = "";
-            // dayTwoHumidity.append(humidityTwo);
-            // /* ------------------------- day 2 ----------------------------- */
-
-
-            // /* ------------------------- day 3 ----------------------------- */
-            // var theDateThree = document.createElement("h2");
-            // theDateThree.textContent = date.add(3, "day").format("M/DD/YYYY");
-            // dateThree.setAttribute("style", "font-size: 15px; padding-bottom: 20px")
-            // dateThree.innerHTML = "";
-            // dateThree.append(theDateThree);
-
-            // var tempThree = document.createElement("li");
-            // tempThree.textContent = "Temperature: " + dataTwo.list[3].main.temp;
-            // dayThreeTemp.innerHTML = "";
-            // dayThreeTemp.append(tempThree);
-
-            // var windThree = document.createElement("li");
-            // windThree.textContent = "Wind Speed: " + dataTwo.list[3].wind.speed;
-            // dayThreeWind.innerHTML = "";
-            // dayThreeWind.append(windThree);
-
-            // var humidityThree = document.createElement("li");
-            // humidityThree.textContent = "Humidity: " + dataTwo.list[3].main.humidity;
-            // dayThreeHumidity.innerHTML = "";
-            // dayThreeHumidity.append(humidityThree);
-            // /* ------------------------- day 3 ----------------------------- */
-
-
-            // /* ------------------------- day 4 ----------------------------- */
-            // var theDateFour = document.createElement("h2");
-            // theDateFour.textContent = date.add(4, "day").format("M/DD/YYYY");
-            // dateFour.setAttribute("style", "font-size: 15px; padding-bottom: 20px")
-            // dateFour.innerHTML = "";
-            // dateFour.append(theDateFour);
-
-            // var tempFour = document.createElement("li");
-            // tempFour.textContent = "Temperature: " + dataTwo.list[4].main.temp;
-            // dayFourTemp.innerHTML = "";
-            // dayFourTemp.append(tempFour);
-
-            // var windFour = document.createElement("li");
-            // windFour.textContent = "Wind Speed: " + dataTwo.list[4].wind.speed;
-            // dayFourWind.innerHTML = "";
-            // dayFourWind.append(windFour);
-
-            // var humidityFour = document.createElement("li");
-            // humidityFour.textContent = "Humidity: " + dataTwo.list[4].main.humidity;
-            // dayFourHumidity.innerHTML = "";
-            // dayFourHumidity.append(humidityFour);
-            // /* ------------------------- day 4 ----------------------------- */
-
-            // /* ------------------------- day 5 ----------------------------- */
-            // var theDateFive = document.createElement("h2");
-            // theDateFive.textContent = date.add(5, "day").format("M/DD/YYYY");
-            // dateFive.setAttribute("style", "font-size: 15px; padding-bottom: 20px")
-            // dateFive.innerHTML = "";
-            // dateFive.append(theDateFive);
-
-            // var tempFive = document.createElement("li");
-            // tempFive.textContent = "Temperature: " + dataTwo.list[5].main.temp;
-            // dayFiveTemp.innerHTML = "";
-            // dayFiveTemp.append(tempFive);
-
-            // var windFive = document.createElement("li");
-            // windFive.textContent = "Wind Speed: " + dataTwo.list[5].wind.speed;
-            // dayFiveWind.innerHTML = "";
-            // dayFiveWind.append(windFive);
-
-            // var humidityFive = document.createElement("li");
-            // humidityFive.textContent = "Humidity: " + dataTwo.list[5].main.humidity;
-            // dayFiveHumidity.innerHTML = "";
-            // dayFiveHumidity.append(humidityFive);
-            /* ------------------------- day 5 ----------------------------- */
         })
 }
