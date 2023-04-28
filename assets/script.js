@@ -13,8 +13,8 @@ var iconImage = document.querySelector(".icon-image");
 var cityList = document.querySelector("#city-list");
 var forecastTitle = document.querySelector(".title");
 var date = dayjs();
-// var latitude;
-// var longitude;
+var latitude;
+var longitude;
 
 /* getting the previous cities search through local storage */
 function searchHistory() {
@@ -25,9 +25,10 @@ function searchHistory() {
     for(var i = 0; i < history.length; i++){
         var button = document.createElement("button");
         button.textContent = history[i];
-        // button.addEventListener("click", function(){
-        //     getWeather(latitude, longitude);
-        // })
+        button.setAttribute("style", "margin-top: 10px;");
+        button.addEventListener("click", function(){
+            getWeather(latitude, longitude)
+        })
         cityList.append(button);
         }
     }
@@ -51,8 +52,8 @@ function getCity(userInput) {
             console.log(data);
             var lat = data[0].lat;
             var lon = data[0].lon;
-            // latitude = lat;
-            // longitude = lon;
+            latitude = lat;
+            longitude = lon;
             console.log(lat + ", " + lon);
             getWeather(lat, lon);
             var searchCity = JSON.parse(localStorage.getItem("city")) || [];
