@@ -44,7 +44,7 @@ searchBtn.addEventListener("click", function () {
 
 /* getting the user input of a city and having it displayed on the screen */
 function getCity(userInput) {
-    var cityURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + userInput + "&limit=&appid=" + APIKey;
+    var cityURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + userInput + "&limit=&appid=" + APIKey;
     fetch(cityURL)
         .then(function (response) {
             return response.json();
