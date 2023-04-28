@@ -41,4 +41,5 @@ SOFTWARE.
 ## Links
 
 Here is the link for the repo: https://github.com/Nneifem/weather-dashboard
+
 Here is the link for the website: https://nneifem.github.io/weather-dashboard/
