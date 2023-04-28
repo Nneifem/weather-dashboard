@@ -27,7 +27,8 @@ function searchHistory() {
         button.textContent = history[i];
         button.setAttribute("style", "margin-top: 10px;");
         button.addEventListener("click", function(){
-            getWeather(latitude, longitude)
+            console.log(this.innerHTML);
+            getCity(this.innerHTML);
         })
         cityList.append(button);
         }
@@ -62,10 +63,10 @@ function getCity(userInput) {
             searchHistory();
 
             /* current date displaying day and the city the user input */
-            var cityName = document.createElement("h1")
+            var cityName = document.createElement("h1");
             cityName.textContent = data[0].name + date.format(" (M/DD/YYYY)");
             cityNameEl.innerHTML = "";
-            cityNameEl.setAttribute("style", "font-size: 24px; padding-left: 10px; padding-top: 10px;", "class", "location")
+            cityNameEl.setAttribute("style", "font-size: 24px; padding-left: 10px; padding-top: 10px;", "class", "location");
             cityNameEl.append(cityName);
         })
 }
@@ -88,18 +89,29 @@ function renderForecastCard(forecastData){
     fiveDaysContainer.append(forecastImage);
 
     /* the temp, wind speed, and humidity for each day */
-    var forecastInfo = document.createElement("section");
+    var forecastTemp = document.createElement("section");
     var section = document.createElement("p");
-    section.textContent = "Temperature: " + forecastData.main.temp + "\nWind Speed: " + forecastData.wind.speed + " MPH" + "\nHumidity: " + forecastData.main.humidity + " %";
-    section.setAttribute("class", "five-day");
+    section.textContent = "Temperature: " + forecastData.main.temp;
     forecastCard.append(section);
-    fiveDaysContainer.append(forecastInfo); 
+    fiveDaysContainer.append(forecastTemp); 
+
+    var forecastWind = document.createElement("section");
+    var section2 = document.createElement("p");
+    section2.textContent = "\nWind Speed: " + forecastData.wind.speed + " MPH";
+    forecastCard.append(section2);
+    fiveDaysContainer.append(forecastWind); 
+
+    var forecastHumidity = document.createElement("section");
+    var section3 = document.createElement("p");
+    section3.textContent = "\nHumidity: " + forecastData.main.humidity + "%";
+    forecastCard.append(section3);
+    fiveDaysContainer.append(forecastHumidity);
 }
 
 
 /* getting the temperature, icon, lat, and lon for the current and next 5 days for eac city */
-function getWeather(lat, lon) {
-    var weatherURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&units=imperial";
+function getWeather(latitude, longitude) {
+    var weatherURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIKey + "&units=imperial";
 
     fetch(weatherURL)
         .then(function (response) {
@@ -132,7 +144,7 @@ function getWeather(lat, lon) {
 
             /* looping through the 5 day forecast to get the data */
             fiveDaysContainer.innerHTML = "";
-            for(var i = 0; i < dataTwo.list.length; i+= 8){
+            for(var i = 1; i < dataTwo.list.length; i+= 8){
                 renderForecastCard(dataTwo.list[i]);
             }
         })
