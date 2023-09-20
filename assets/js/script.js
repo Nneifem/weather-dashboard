@@ -25,18 +25,18 @@ function searchHistory() {
     for(var i = 0; i < history.length; i++){
         var button = document.createElement("button");
         button.textContent = history[i];
-        button.setAttribute("style", "margin-top: 10px;");
+        button.setAttribute("style", "margin-top: 10px; background-color: #89CFF1;");
         button.addEventListener("click", function(){
             console.log(this.innerHTML);
             getCity(this.innerHTML);
         })
         cityList.append(button);
-        }
+        } 
     }
 }
 searchHistory();
 
-/* having hte search button worked when clicked which will get the data for today and the next 5 day forecast */
+/* having the search button worked when clicked which will get the data for today and the next 5 day forecast */
 searchBtn.addEventListener("click", function () {
     var inputEl = document.querySelector(".text").value;
     getCity(inputEl);
@@ -66,7 +66,7 @@ function getCity(userInput) {
             var cityName = document.createElement("h1");
             cityName.textContent = data[0].name + date.format(" (M/DD/YYYY)");
             cityNameEl.innerHTML = "";
-            cityNameEl.setAttribute("style", "font-size: 24px; padding-left: 10px; padding-top: 10px;", "class", "location");
+            cityNameEl.setAttribute("style", "font-size: 24px; padding-left: 10px; padding-top: 10px;", "class", "location",);
             cityNameEl.append(cityName);
         })
 }
@@ -75,7 +75,7 @@ function getCity(userInput) {
 function renderForecastCard(forecastData){
     /* the date for each day */
     var forecastCard = document.createElement("div");
-    forecastCard.setAttribute("style", "border: solid black 2px; margin: 10px; padding: 15px; background-color: grey; color: white;");
+    forecastCard.setAttribute("style", "border-radius: 10px; border: solid white 1px; margin: 10px; padding: 15px; background-color: #3776A1; color: white;");
     var heading = document.createElement("h2");
     heading.textContent = forecastData.dt_txt;
     forecastCard.append(heading);

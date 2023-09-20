@@ -1,9 +1,14 @@
+* {
+    font-family: sans-serif;
+}
+
 .dashboard{
     display: flex;
     justify-content: center;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: lightblue;
+    background-color: #003A6B;
+    color: #E8EAF6;
 }
 
 .search-menu{
@@ -12,6 +17,7 @@
 
 .text {
     width: 192px;
+    height: 20px;
 }
 
 .search-menu button{
@@ -29,12 +35,13 @@
 
 .title {
     padding-left: 40px;
-    padding-top: 40px;
+    padding-top: 50px;
 } 
 
 .five-day{
     display: flex;
-    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 } 
 
 main {
@@ -48,6 +55,12 @@ main {
     flex-direction: row;
 }
 
+button {
+    background-color: #6EB1D6;
+    border-style: none;
+    padding: 2px;
+    border-radius: 10px;
+}
 
 @media screen and (max-width: 768px){
     .whole-body {
@@ -61,7 +74,7 @@ main {
     .five-day {
         flex-direction: column;
         width: 190px;
-        margin-left: 60px;
+        margin-left: 55px;
     }
 
     .location {
@@ -69,10 +82,18 @@ main {
     }
 
     .title {
-        padding-left: 100px
+        padding-left: 90px
     }
 
     .search-menu {
         padding-left: 80px
+    }
+
+    .text {
+        height: 12px;
+    }
+
+    .location {
+        padding-top: 10px;
     }
 }

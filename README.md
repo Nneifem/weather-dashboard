@@ -6,9 +6,7 @@ This project was made to be able to check the weather of any city that the user 
 
 ## Usage
 
-![alt text](assets/images/Screenshot%202023-04-27%20at%2011.01.42%20PM.png)
-![alt text](assets/images/Screenshot%202023-04-27%20at%2011.02.02%20PM.png)
-![alt text](assets/images/Screenshot%202023-04-27%20at%2011.02.17%20PM.png)
+![alt text](assets/images/Screenshot%202023-09-20%20at%204.49.14%20PM.png)
 
 When you click on the empty container above the search button, the user will be able to type in a city of their choice, then once the user clicks the search button, the current weather along with the next 5 days of temperature, wind speed, and humidity will appear. The city you search will then be added to the search history below the search button where if the user at anytimes needs to, can go back and click on the previous city to look at the information again.  
 
