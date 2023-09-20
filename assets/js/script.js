@@ -136,11 +136,11 @@ function getWeather(latitude, longitude) {
             currentHumidity.innerHTML = "";
             currentHumidity.append(humidity);
 
-            var fiveForecastTitle = document.createElement("main");
-            var title = document.createElement("h2");
-            title.textContent = "5 Day Forecast";
-            fiveForecastTitle.append(title);
-            forecastTitle.append(fiveForecastTitle);
+            // var fiveForecastTitle = document.createElement("main");
+            // var title = document.createElement("h2");
+            // title.textContent = "5 Day Forecast";
+            // fiveForecastTitle.append(title);
+            // forecastTitle.append(fiveForecastTitle);
 
             /* looping through the 5 day forecast to get the data */
             fiveDaysContainer.innerHTML = "";
