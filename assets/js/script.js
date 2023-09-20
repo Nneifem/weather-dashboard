@@ -8,7 +8,7 @@ var inputEl = document.querySelector(".text");
 var currentTemp = document.querySelector(".today-temp");
 var currentWind = document.querySelector(".today-wind");
 var currentHumidity = document.querySelector(".today-humidity");
-var currentDateEl = document.querySelector(".currentd-date");
+var currentDateEl = document.querySelector(".current-date");
 var iconImage = document.querySelector(".icon-image");
 var cityList = document.querySelector("#city-list");
 var forecastTitle = document.querySelector(".title");
@@ -75,7 +75,7 @@ function getCity(userInput) {
 function renderForecastCard(forecastData){
     /* the date for each day */
     var forecastCard = document.createElement("div");
-    forecastCard.setAttribute("style", "border: solid black 2px; padding: 15px; background-color: grey; color: white;");
+    forecastCard.setAttribute("style", "border: solid black 2px; margin: 10px; padding: 15px; background-color: grey; color: white;");
     var heading = document.createElement("h2");
     heading.textContent = forecastData.dt_txt;
     forecastCard.append(heading);

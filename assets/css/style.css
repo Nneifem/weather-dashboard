@@ -22,9 +22,9 @@
 }
 
 .location{
-    border: solid black 2px;
+    /* border: solid black 2px;
     margin-left: 280px;
-    margin-right: 50px;
+    margin-right: 50px; */
 }
 
 .location ul {
@@ -33,16 +33,27 @@
 }
 
 .title {
-    display: flex;
+    /* display: flex;
     padding-top: 20px;
-    padding-left: 270px;
+    padding-left: 270px; */
 } 
 
 .five-day{
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     padding: 30px;
 } 
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding-left: 190px;
+}
+
+.whole-body {
+    display: flex;
+    flex-direction: row;
+}
 
 
 @media screen and (max-width: 768px){
